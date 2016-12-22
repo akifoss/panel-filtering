@@ -1,4 +1,4 @@
-## Eske blastn pipeline spec
+## Sofia blastx pipeline spec
 
 This repo contains a
 [slurm-pipeline](https://github.com/acorg/slurm-pipeline) specification
