@@ -11,7 +11,7 @@ out=$task.json.bz2
 echo "02-blastx on task $task started at `date`" >> $log
 echo "  FASTA file is $fasta" >> $log
 
-db=viral-protein-OKIAV-ECH
+db=viral-protein-OKIAV-ECH-renamed
 
 # This is just one of the BLAST db files.
 dbfile=$HOME/scratch/root/share/ncbi/blast-dbs/$db.psq
