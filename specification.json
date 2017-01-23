@@ -6,9 +6,8 @@
             "script": "00-start/start.sh"
         },
         {
-            "collect": true,
             "cwd": "01-panel",
-            "dependencies": ["blastx"],
+            "dependencies": ["start"],
             "name": "panel",
             "script": "01-panel/sbatch.sh"
         },
