@@ -16,8 +16,8 @@ fasta=
 for task in "$@"
 do
     echo "  Task $task" >> $log
-    json="$json ../../secondary/$sample/02-blastx/$task.json.bz2"
-    fasta="$fasta ../../secondary/$sample/01-split/$task.fasta"
+    json="$json ../../secondary/$sample/02-blastx/chunk-*.json.bz2"
+    fasta="$fasta ../../secondary/$sample/01-split/chunk-*.fasta"
 done
 
 if [ -z "$json" ]
