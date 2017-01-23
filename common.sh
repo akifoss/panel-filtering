@@ -2,7 +2,6 @@
 # 00-start, etc. This file is sourced by those scripts.
 
 dataDir=../../../../$(basename $(dirname $(/bin/pwd)))
-flashDir=../../../initial/$(basename $(dirname $(/bin/pwd)))/02-flash
 logDir=../logs
 doneFile=../slurm-pipeline.done
 runningFile=../slurm-pipeline.running

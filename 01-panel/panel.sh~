@@ -8,15 +8,15 @@
 log=$sampleLogFile
 out=summary-virus
 
-echo "03-panel started at `date`" >> $log
+echo "01-panel started at `date`" >> $log
 
 json=
 fasta=
 for task in "$@"
 do
     echo "  Task $task" >> $log
-    json="$json ../02-blastx/$task.json.bz2"
-    fasta="$fasta ../01-split/$task.fasta"
+    json="$json ../../secondary/$sample/02-blastx/$task.json.bz2"
+    fasta="$fasta ../../secondary/$sample/01-split/$task.fasta"
 done
 
 if [ -z "$json" ]
@@ -73,5 +73,5 @@ else
     fi
 fi
 
-echo "03-panel stopped at `date`" >> $log
+echo "01-panel stopped at `date`" >> $log
 echo >> $log
