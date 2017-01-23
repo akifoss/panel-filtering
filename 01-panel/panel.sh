@@ -7,12 +7,13 @@
 # 'collect' step that is only run once.
 log=$sampleLogFile
 out=summary-virus
-sample=140715-08
 
 echo "01-panel started at `date`" >> $log
 
 json=
 fasta=
+sample=$(basename $(dirname $(/bin/pwd)))
+
 for task in "$@"
 do
     echo "  Task $task" >> $log
