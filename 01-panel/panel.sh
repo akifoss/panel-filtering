@@ -49,7 +49,6 @@ function panel()
     echo "  noninteractive-alignment-panel.py stopped at `date`" >> $log
 }
 
-
 if [ $SP_SIMULATE = "1" ]
 then
     echo "  This is a simulation." >> $log
