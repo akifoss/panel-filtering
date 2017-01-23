@@ -33,38 +33,5 @@ echo "SLURM pipeline started at `date`" >> $log
 echo >> $log
 echo "00-start started at `date`" >> $log
 
-
-IFS=$'\n'
-fastq=($(ls $dataDir/*.fastq.gz | sed -e 's:.*/::' | cut -f1 -d.))
-unset IFS
-
-task=`echo $fastq[0] | sed -e s/_R1_.*//`
-
-fastq1=$flashDir/${task}_R1_001-flash.fastq.gz
-fastq2=$flashDir/${task}_R2_001-flash.fastq.gz
-fastqMerged=$flashDir/${task}-merged-flash.fastq.gz
-
-if [ ! -f $fastq1 ]
-then
-    echo "  FASTQ1 $fastq1 does not exist!" >> $log
-    exit 1
-fi
-
-if [ ! -f $fastq2 ]
-then
-    echo "  FASTQ2 $fastq2 does not exist!" >> $log
-    exit 1
-fi
-
-if [ ! -f $fastqMerged ]
-then
-    echo "  FASTQ1 $fastqMerged does not exist!" >> $log
-    exit 1
-fi
-
-echo "  FASTQ1 $fastq1" >> $log
-echo "  FASTQ2 $fastq2" >> $log
-echo "  FASTQ merged (by flash) $fastqMerged" >> $log
-
 echo "00-start stopped at `date`" >> $log
 echo >> $log
