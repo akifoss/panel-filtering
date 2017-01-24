@@ -39,7 +39,8 @@ function panel()
       --outputDir out \
       --withScoreBetterThan 50 \
       --scoreCutoff 50 \
-      --minMatchingReads 5 > summary-virus
+      --minCoverage 0.1 \
+      --minMatchingReads 10 > summary-virus
     echo "  noninteractive-alignment-panel.py stopped at `date`" >> $log
 }
 
