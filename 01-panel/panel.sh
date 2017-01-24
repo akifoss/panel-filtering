@@ -10,16 +10,9 @@ out=summary-virus
 
 echo "01-panel started at `date`" >> $log
 
-json=
-fasta=
 sample=$(basename $(dirname $(/bin/pwd)))
-
-for task in "$@"
-do
-    echo "  Task $task" >> $log
-    json="$json ../../secondary/$sample/02-blastx/chunk-*.json.bz2"
-    fasta="$fasta ../../secondary/$sample/01-split/chunk-*.fasta"
-done
+json="/home/tcj25/scratch/projects/sofia/pipelines/secondary/$sample/02-blastx/chunk-*.json.bz2"
+fasta="/home/tcj25/scratch/projects/sofia/pipelines/secondary/$sample/01-split/chunk-*.fasta"
 
 if [ -z "$json" ]
 then
